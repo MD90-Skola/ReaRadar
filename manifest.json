@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Inet Fyndhörnan – ReaRadar",
+  "version": "1.7.0",
+  "description": "Bevakning av inet.se/fyndhornan med filter, procent-sliders och push.",
+  "permissions": ["alarms", "notifications", "storage"],
+  "host_permissions": ["https://www.inet.se/*"],
+  "background": { "service_worker": "bg.js" },
+  "action": { "default_popup": "popup.html", "default_title": "ReaRadar" },
+  "icons": { "128": "icon.png" },
+  "web_accessible_resources": [
+    { "resources": ["debug/*.png"], "matches": ["<all_urls>"] }
+  ]
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <title>ReaRadar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+<header class="top">
+    <div class="top-row">
+        <h1>ReaRadar</h1>
+        <nav class="links">
+            <a class="btn link" href="https://www.twitch.tv/inet" target="_blank" rel="noopener">Twitch</a>
+            <a class="btn link" href="https://www.youtube.com/inet" target="_blank" rel="noopener">YouTube</a>
+            <a class="btn link" href="https://www.inet.se/fyndhornan" target="_blank" rel="noopener">Fyndhörnan</a>
+        </nav>
+    </div>
+
+    <div class="sliders">
+        <div class="row">
+            <label>Visa minst: <span id="minVal">0</span>%</label>
+            <input id="min" type="range" min="0" max="100" step="1" value="0" />
+        </div>
+        <div class="row">
+            <label>Push minst: <span id="notifyVal">0</span>%</label>
+            <input id="notify" type="range" min="0" max="100" step="1" value="0" />
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <button id="filterToggle" class="btn small" aria-expanded="false">Sökfilter ▸</button>
+        <button id="refresh" class="btn small">Uppdatera</button>
+        <button id="btnTest" class="btn small accent">Simulera fynd</button>
+    </div>
+</header>
+
+<!-- Kollapsbar filterpanel (stängd som standard) -->
+<section id="filterPanel" class="panel" hidden>
+    <div class="list">
+        <div class="list-title">Välj i listan (checkboxar):</div>
+        <div id="filterList" class="list-body"></div>
+    </div>
+
+    <div class="pills">
+        <div class="list-title">Aktiva filter (klicka för att ta bort):</div>
+        <div id="activePills" class="pills-body"></div>
+    </div>
+</section>
+
+...
+<!-- Produktkort -->
+<ul id="list" class="cards"></ul>
+
+<!-- Ladda memory UI först, sedan popup-logiken, sist debug -->
+<script src="memory.js"></script>
+<script src="popup.js"></script>
+<script src="debug/test.js"></script>
+</body>
+</html>
+

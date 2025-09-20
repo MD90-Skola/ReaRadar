@@ -1,0 +1,81 @@
+:root{
+    --bg:#242526; --panel:#2b2d2e; --card:#303233; --border:#3a3c3d;
+    --text:#f5f6f7; --muted:#b8bcc0; --accent:#39f;
+    --red:#d10000; --green:#42a512;
+}
+
+*{box-sizing:border-box}
+body{margin:0;padding:10px;min-width:370px;background:var(--bg);color:var(--text);font:13px/1.4 system-ui,Segoe UI,Roboto,Arial}
+
+h1{font-size:14px;margin:0}
+.top{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:10px}
+.top-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.links{display:flex;gap:6px}
+.btn{background:#2c2c2c;color:#fff;border:1px solid var(--border);padding:6px 10px;border-radius:8px;cursor:pointer;text-decoration:none}
+.btn:hover{background:#222}
+.btn.link{padding:6px 10px}
+.btn.accent{border-color:#366FE1}
+.btn.small{padding:4px 8px}
+
+.sliders{margin-top:8px}
+.sliders .row{display:flex;align-items:center;gap:10px;margin:6px 0}
+.sliders label{min-width:120px;color:var(--muted)}
+input[type=range]{flex:1}
+
+.toolbar{display:flex;gap:6px;margin-top:6px}
+
+/* Kollapsbar panel */
+.panel{
+    margin-top:8px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:8px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.panel[hidden]{display:none}
+
+.list-title{color:var(--muted);font-weight:600;margin-bottom:6px}
+.list-body{max-height:180px;overflow:auto;display:flex;flex-direction:column;gap:6px;padding-right:4px}
+.list-item{display:flex;align-items:center;gap:8px}
+.list-item input{width:16px;height:16px}
+
+.pills-body{display:flex;gap:6px;flex-wrap:wrap;min-height:28px}
+.pill{padding:4px 8px;border-radius:999px;border:1px solid var(--border);background:#2a2a2a;cursor:pointer}
+.pill:hover{outline:2px solid var(--accent)}
+
+/* Kortlista */
+.cards{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;max-height:560px;overflow:auto}
+.cards::-webkit-scrollbar{width:10px}
+.cards::-webkit-scrollbar-thumb{background:#444;border-radius:8px}
+
+.card{
+    position:relative;
+    display:grid;grid-template-columns:86px 1fr auto;gap:12px;align-items:center;
+    background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px
+}
+.img{width:86px;height:86px;background:#1f1f1f;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.img img{max-width:100%;max-height:100%}
+.title{font-weight:700}
+.title a{color:#fff;text-decoration:none}
+.title a:hover{text-decoration:underline}
+
+.meta{display:flex;gap:10px;color:var(--muted);font-size:12px;margin-top:2px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+
+.price{display:flex;gap:10px;align-items:baseline;margin-top:4px}
+.new{color:var(--red);font-weight:800}
+.old{color:#fff;opacity:.85}
+.old s{color:#fff;opacity:.85;text-decoration:line-through}
+
+.badge{justify-self:end;background:var(--red);color:#fff;font-weight:800;padding:6px 8px;border-radius:8px;min-width:48px;text-align:center}
+
+/* Dismiss */
+.dismiss{position:absolute;top:6px;right:6px;width:22px;height:22px;border-radius:6px;border:1px solid var(--border);background:#2c2c2c;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.dismiss:hover{background:#222}
+
+/* (Valfritt) Liten extra spacing i historik-kortlistan */
+#historyPanel .cards { max-height: 360px; }
+
